@@ -20,7 +20,6 @@ white = Colour.from_rgb(255, 255, 255)
 print(white.to_hex()) # #ffffff
 print(white.to_hsl()) # (0, 0.0, 1.0)
 
-
 hsv = Colour.from_hsv(184, 0.85, 1.0)
 print(hsv.to_rgb()) # (38.25000000000001, 240.54999999999995, 255.0)
 
