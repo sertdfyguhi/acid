@@ -4,6 +4,23 @@ yn = 100
 zn = 108.8840
 
 
+def normalize_XYZ(x: int | float, y: int | float, z: int | float) -> tuple[int | float]:
+    """
+    Normalizes XYZ colour values using CIE standard illuminant D65 as white achromatic reference illuminant.
+
+    Args:
+        x: int | float
+            X value.
+        y: int | float
+            Y value.
+        z: int | float
+            Z value.
+
+    Returns: tuple[int | float] consisting of normalized XYZ colour values.
+    """
+    return (x / xn, y / yn, z / zn)
+
+
 class XYZMixin:
     """Mixin to add CIEXYZ conversion functions."""
 
