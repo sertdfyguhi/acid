@@ -11,7 +11,7 @@ class HSVMixin:
                 saturation (0.0 - 1.0): as decimal percentage
                 value (0.0 - 1.0): as decimal percentage
         """
-        r, g, b = self.r / 255, self.g / 255, self.b / 255
+        r, g, b = self.to_rgbd()
 
         M = max(r, g, b)
         m = min(r, g, b)

@@ -19,7 +19,7 @@ class XYZMixin:
         Returns: tuple[int | float] consisting of XYZ values.
         """
         # linearize sRGB data
-        rgb = (self.r / 255, self.g / 255, self.b / 255)
+        rgb = self.to_rgbd()
         rt, gt, bt = (
             c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4 for c in rgb
         )
