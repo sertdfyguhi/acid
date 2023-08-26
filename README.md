@@ -31,8 +31,8 @@ print(hsv.to_rgb()) # (38, 241, 255)
 
 # Todo
 
-- [ ] Finish CIELAB colour conversion
-  - [ ] Correctly implement to_lab
+- [x] Finish CIELAB colour conversion
+  - [x] Correctly implement to_lab
 - [ ] Finish CMYK colour conversion
 - [ ] Tests
 - [ ] Publish to PyPI

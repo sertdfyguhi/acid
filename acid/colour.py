@@ -13,7 +13,7 @@ from .xyz import XYZMixin
 @dataclass
 class Colour(CMYKMixin, RGBMixin, HSLMixin, HSVMixin, LabMixin, XYZMixin, HexMixin):
     """
-    A class based on RGBA to easily convert between many kinds of colour models, including:
+    A class to easily convert between many kinds of colour models, including:
 
     - RGB, RGBA, hex
     - HSL
@@ -23,6 +23,9 @@ class Colour(CMYKMixin, RGBMixin, HSLMixin, HSVMixin, LabMixin, XYZMixin, HexMix
     - CIEXYZ
 
     with class conversion support for PIL and OpenCV.
+
+    Internally it stores RGBA colour values as an intermediate between colour models.
+    These values are accessable from properties .r, .g, .b and .a.
 
     Made by sertdfyguhi (https://github.com/sertdfyguhi).
     """
@@ -34,7 +37,7 @@ class Colour(CMYKMixin, RGBMixin, HSLMixin, HSVMixin, LabMixin, XYZMixin, HexMix
 
     def floor(self) -> None:
         """
-        Floors the RGBA colour values.
+        Floors the internal RGBA colour values.
 
         Returns: None
         """
@@ -45,7 +48,7 @@ class Colour(CMYKMixin, RGBMixin, HSLMixin, HSVMixin, LabMixin, XYZMixin, HexMix
 
     def round(self) -> None:
         """
-        Rounds the RGBA colour values.
+        Rounds the internal RGBA colour values.
 
         Returns: None
         """
@@ -56,7 +59,7 @@ class Colour(CMYKMixin, RGBMixin, HSLMixin, HSVMixin, LabMixin, XYZMixin, HexMix
 
     def ceil(self) -> None:
         """
-        Ceils the RGBA colour values.
+        Ceils the internal RGBA colour values.
 
         Returns: None
         """

@@ -10,9 +10,13 @@ class XYZMixin:
     def to_xyz(self, normalize: bool = True) -> tuple[int | float]:
         """
         Converts the Colour object into XYZ. Assumes Colour object is in the sRGB colour space.
+        Uses CIE standard illuminant D65 as white reference.
 
-        Returns:
-            tuple[int | float (0.0 - 1.0)] consisting of normalized XYZ values
+        Args:
+            normalize: bool = True
+                If true, normalizes XYZ colour values before returning.
+
+        Returns: tuple[int | float] consisting of XYZ values.
         """
         # linearize sRGB data
         rgb = (self.r / 255, self.g / 255, self.b / 255)
@@ -34,6 +38,7 @@ class XYZMixin:
     def from_xyz(cls, x: int | float, y: int | float, z: int | float):
         """
         Creates a Colour object from a XYZ colour.
+        Uses CIE standard illuminant D65 as white reference.
 
         Args:
             x: int | float (0.0 - 1.0)
