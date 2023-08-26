@@ -1,4 +1,4 @@
-# acid: A robust python library for colour conversion.
+# ketamine: A robust python library for colour conversion.
 
 A python library for colour conversion between colour models.
 
@@ -11,10 +11,25 @@ A python library for colour conversion between colour models.
 - CIELAB
 - CIEXYZ
 
+# Installation
+
+```sh
+pip install ketamine
+```
+
+or install it from source:
+
+```sh
+git clone https://github.com/sertdfyguhi/ketamine/
+cd ketamine
+python3 -m build
+pip install dist/*.whl
+```
+
 # Example Usage
 
 ```py
-from acid import Colour
+from ketamine import Colour
 
 white = Colour.from_rgb(255, 255, 255)
 print(white.to_hex()) # #ffffff
@@ -34,4 +49,4 @@ print(hsv.to_rgb()) # (38, 241, 255)
 - [x] Finish CIELAB colour conversion
   - [x] Correctly implement to_lab
 - [x] Finish CMYK colour conversion
-- [ ] Publish to PyPI
+- [x] Publish to PyPI
