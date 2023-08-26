@@ -1,7 +1,13 @@
+# standard d65
+xn = 95.0489
+yn = 100
+zn = 108.8840
+
+
 class XYZMixin:
     """Mixin to add CIEXYZ conversion functions."""
 
-    def to_xyz(self) -> tuple[int | float]:
+    def to_xyz(self, normalize: bool = True) -> tuple[int | float]:
         """
         Converts the Colour object into XYZ. Assumes Colour object is in the sRGB colour space.
 
@@ -15,11 +21,14 @@ class XYZMixin:
         )
 
         # transformation matrix
-        return (
-            0.4124564 * rt + 0.3575761 * gt + 0.1804375 * bt,
-            0.2126729 * rt + 0.7151522 * gt + 0.0721750 * bt,
-            0.0193339 * rt + 0.1191920 * gt + 0.9503041 * bt,
-        )
+        x = 0.4124564 * rt + 0.3575761 * gt + 0.1804375 * bt
+        y = 0.2126729 * rt + 0.7151522 * gt + 0.0721750 * bt
+        z = 0.0193339 * rt + 0.1191920 * gt + 0.9503041 * bt
+
+        if normalize:
+            return (x, y, z)
+        else:
+            return (x * xn, y * yn, z * zn)
 
     @classmethod
     def from_xyz(cls, x: int | float, y: int | float, z: int | float):
