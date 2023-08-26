@@ -22,8 +22,6 @@ class Colour(CMYKMixin, RGBMixin, HSLMixin, HSVMixin, LabMixin, XYZMixin, HexMix
     - CIELAB
     - CIEXYZ
 
-    with class conversion support for PIL and OpenCV.
-
     Internally it stores RGBA colour values as an intermediate between colour models.
     These values are accessable from properties .r, .g, .b and .a.
 

@@ -1,4 +1,4 @@
-from acid import Colour
+from ketamine import Colour
 
-colour = Colour.from_rgb(191, 152, 46)
-print(colour.to_cmyk())
+colour = Colour.from_rgb(48, 170, 184)
+print(colour.to_hsl(), colour.to_hsv())
